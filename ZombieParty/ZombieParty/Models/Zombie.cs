@@ -8,17 +8,23 @@ namespace ZombieParty.Models
     {
         public int Id { get; set; }
 
+        [Display(Name ="Name")]
         [StringLength(20, MinimumLength = 5)]
         public string Name { get; set; }
 
+        [Display(Name = "ShortDesc")]
         [StringLength(255)]
         public string ShortDesc { get; set; }
 
+
+        [Display(Name = "Point")]
         [Range(1, 20, ErrorMessage = "{0} requires a value between {1} and {2}.")]
         public int Point { get; set; }
 
+        [Display(Name = "Force")]
         public int Force { get; set; }
 
+        [Display(Name = "Image")]
         [ValidateNever]
         public string Image { get; set; }
 
@@ -30,6 +36,7 @@ namespace ZombieParty.Models
         [ValidateNever] 
         public virtual ZombieType? ZombieType { get; set; }
 
+        [Display(Name = "HuntingLogs")]
         [ValidateNever] 
         public virtual List<HuntingLog> HuntingLogs { get; set; }
     }
